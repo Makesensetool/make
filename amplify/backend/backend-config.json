@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "makesensedevelop7040d589": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

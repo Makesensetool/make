@@ -1,0 +1,240 @@
+@import "../settings/Settings";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+.Appmain {
+  --leading-color: #{$secondaryColor};
+  --button-text-color: #{white};
+  --hue-value: 172deg;
+}
+
+.Appmain.AI {
+  --leading-color: #{$primaryColor};
+  --button-text-color: #{$darkThemeSecondColor};
+  --hue-value: 120deg;
+}
+
+.marginleft{
+  margin-left:25px;
+}
+
+.SignApp {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0000;
+  background: #085078; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #171717,
+    #1bd5be
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #171717,
+    #1bd5be
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.i-style {
+  margin-left: -130px;
+}
+.bottomlogin {
+  color: #385076;
+  display: flex;
+  margin-left: 50px;
+}
+.forgotPasswordicon {
+  margin-left: 70px;
+  margin-right: 70px;
+  color: "#385076";
+}
+.flexer {
+  display: flex;
+  margin-left: 50px;
+  color: #385076;
+}
+.center-align {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  flex-direction: column;
+  align-items: center;
+}
+
+.justflex {
+  display: flex;
+  color: #385076;
+}
+/* <- Demo Stuff Start */
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-family: "Poppins", sans-serif;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-2 {
+  background-image: linear-gradient(
+    to right,
+    #2b5876 0%,
+    #4e4376 51%,
+    #2b5876 100%
+  );
+}
+
+/* Magic Stuff End -> */
+.wrap-login100 {
+  width: 500px;
+  height: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-b-54 {
+  padding-bottom: 54px;
+}
+.p-t-65 {
+  padding-top: 65px;
+}
+
+.login100-form-title {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding: 40px;
+}
+
+.label-input100 {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #365176;
+  line-height: 1.5;
+  padding-left: 7px;
+  text-align: left;
+}
+.m-b-23 {
+  margin-bottom: 23px;
+}
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.validate-input {
+  position: relative;
+}
+
+.input100 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: 0 0;
+  padding: 0 7px 0 43px;
+}
+.signupinput{
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: 0 0;
+  padding: 0 7px 0 43px;
+}
+
+
+.inputWithIcon {
+  position: absolute;
+  left: 0;
+  padding: 9px 8px;
+  transition: 3s;
+}
+
+*:focus {
+  outline: white !important;
+  border: white;
+}
+
+.conformsignup-btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  width: 130px;
+  height: 38px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-family: "Poppins", sans-serif;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+.bywidth2 {
+  margin-left: 75px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+.justcolor{
+  color: #385076;
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-makesensedevelop-dev-175932-authRole",
+      "UnauthRoleArn": "arn:aws:iam::699480224348:role/amplify-makesensedevelop-dev-175932-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::699480224348:role/amplify-makesensedevelop-dev-175932-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-makesensedevelop-dev-175932-deployment",
+      "UnauthRoleName": "amplify-makesensedevelop-dev-175932-unauthRole",
+      "StackName": "amplify-makesensedevelop-dev-175932",
+      "StackId": "arn:aws:cloudformation:us-east-1:699480224348:stack/amplify-makesensedevelop-dev-175932/f337bf30-8009-11eb-af97-0e6ee54e29b3",
+      "AmplifyAppId": "d2t2vahfufjbjs"
+    },
+    "categories": {
+      "auth": {
+        "makesensedevelop7040d589": {}
+      }
+    }
+  }
+}
