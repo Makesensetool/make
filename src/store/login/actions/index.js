@@ -19,10 +19,9 @@ export const forgottenpassword = (username, forgotpassword) => {
     forgotpassword: forgotpassword,
   };
 };
-export const resendConfirmation = (username, resendConfirmationCode) => {
+export const resendConfirmation = ( resendConfirmationCode) => {
   return {
     type: "resendConfirmationCode",
-    username: username,
     resendConfirmationCode: resendConfirmationCode,
   };
 };

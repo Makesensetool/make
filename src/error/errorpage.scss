@@ -1,0 +1,43 @@
+body { background-color:#1AA896; }
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+    color:rgb(36, 36, 36)
+}
+.error-actions {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.error-actions .btn {
+     margin-right:10px; 
+}
+
+.errorbtn {
+    flex: 1 1 auto;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-family: "Poppins", sans-serif;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    height: 50px;
+    margin-top: 10px;
+    font-size:13.5px;
+  }
+
+  .btn-2 {
+    background-image: linear-gradient(
+      to right,
+      #2b5876 0%,
+      #4e4376 51%,
+      #2b5876 100%
+    );
+  }
+
+.color{
+    color: white;
+}

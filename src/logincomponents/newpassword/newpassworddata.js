@@ -16,11 +16,11 @@ export const confirmSigned=[
     },
     {
        
-        heading:"Newpassword",
+        heading:"Password",
         name:"newpassword",
         type:"password",
         placeholder:"Enter the new password",
-        icon:"fas fa-passport fa-lg fa-fw i-style"
+        icon:"fa fa-unlock-alt fa-lg fa-fw i-style"
     },
    
 ]

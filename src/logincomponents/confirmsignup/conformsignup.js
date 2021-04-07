@@ -1,32 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* src/App.js */
 import React, { Fragment } from "react";
-import "./signin_&_confirmsignup.scss";
-import { confirmSigned} from "./conformsignupdata";
-
-
+import "../signin/signin_&_confirmsignup.scss";
+import { confirmSigned } from "./conformsignupdata";
+import GetConfirmedSignin from "./getConfirmData";
 const confirmSignedin = (props) => {
-  const getconformedSignedin = confirmSigned.map((data,key) => {
-    return (
-      <form autoComplete="off" className="wrap-input100 validate-input m-b-23" key={key}>
-      <div >
-        <div className="label-input100">{data.heading}</div>
-        <div className="flexer">
-          <span>
-            <i className={data.icon}></i>
-          </span>
-          <input
-            className="input100"
-            name={data.name}
-            onChange={props.changed}
-            placeholder={data.placeholder}
-            onClick={props.errorclicked}
-          ></input>
-        </div>
-      </div>
-      </form>
-    );
-  });
   return (
     <Fragment>
       <div className="SignApp">
@@ -34,9 +12,18 @@ const confirmSignedin = (props) => {
           <div className="center-align">
             <div>
               <span className="login100-form-title">Confirm SignUp</span>
-              {getconformedSignedin}
+              <GetConfirmedSignin
+                changed={props.changed}
+                clicked={props.errorclicked}
+              />
               <p className="paracolor">{props.errormessage}</p>
+              <div style={{ textAlign: "left", marginLeft: "20px" }}>
+                <a className="justcolor" href="/">
+                  Back to Login ?
+                </a>
+              </div>
               <div>
+                <br />
                 <button
                   className="conformsignup-btn btn-2"
                   onClick={props.confirmsignup}

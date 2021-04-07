@@ -27,8 +27,8 @@ const confirmSignedin = (props) => {
                 <span>
                   <i className="fa fa-envelope fa-lg fa-fw i-style"></i>
                 </span>
-                <input 
-                className="input100"
+                <input
+                className="forgotpasswordinput"
                 name="username"
                 type="email"
                 onChange={props.changed}
@@ -37,8 +37,8 @@ const confirmSignedin = (props) => {
               ></input>
               </div>
             </div>
-            <div className="forgotpassword-btn">
             <p className="paracolor">{props.errormessage}</p>
+            <div>
               <button
                 className="forgotpassword-btn btn-2"
                 onClick={props.resend}
