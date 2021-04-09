@@ -1,13 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment } from "react";
 import GetSignedUp from "./getsignupdata";
-import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Media } from "reactstrap";
 import "./signup.scss";
 
 const SignedUp = (props) => {
-  const login = useSelector((state) => state.new);
   return (
     <Fragment>
       <div className="App">
@@ -32,7 +30,7 @@ const SignedUp = (props) => {
             Sign Up
           </button>
           <Link to={"/login"}>
-            <Media className="link-btn justcolor">SignIn?</Media>
+            <Media className="link justcolor">SignIn?</Media>
           </Link>
         </div>
       </div>

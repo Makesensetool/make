@@ -12,6 +12,7 @@ import AfterLogin from "./login";
 import ErrorPage from "./error/errorPage"
 
 import Newpassword from "./logincomponents/newpassword/newpassword";
+import login from "./login";
  const nav=(props)=> {
     const checkRoute = (component) => {
         if (props.loginuser && props.loginuser.length===1002 && props.loginuser && props.loginuser.includes(".")) {
@@ -55,6 +56,7 @@ import Newpassword from "./logincomponents/newpassword/newpassword";
           </Route>
           <Route path="/confirm" exact>
             <ConfirmSignUp
+              user={props.username}
               changed={props.changed}
               confirmsignup={props.confirmsignup}
               resendConfirmationCode={props.resendConfirmationCode}

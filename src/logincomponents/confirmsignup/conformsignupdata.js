@@ -1,11 +1,5 @@
 export const confirmSigned=[
-    {
-        heading:"Username",
-        name:"username",
-        type:"text",
-        placeholder:"Type your username",
-        icon:"fa fa-envelope fa-lg fa-fw i-style"
-    },
+
     {
        
         heading:"Authentication Code",

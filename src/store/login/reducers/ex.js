@@ -47,6 +47,9 @@ export const newpassword=(state=initialFormState,action)=>{
       case "signUp":
         return{
               ...state,
+              username:action.username,
+              password:action.password,
+              Repeatpassword:action.Repeatpassword,
               typeofchange:action.signUp(action.username,action.email, action.password,action.Repeatpassword)
             }
       case "confirmSignUp":

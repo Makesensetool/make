@@ -145,6 +145,7 @@ export default function Login() {
       <Nav
         changed={onChange}
         loginuser={login.user}
+        username={login.username}
         resend={forgotpass}
         errormessage={message}
         errorclicked={onInitialmessage}
