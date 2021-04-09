@@ -12,9 +12,9 @@ const getSignupData =(props)=>SignupData.map((data, key) => {
               className="input100"
               name={data.name}
               type={data.type}
-              onChange={props.changed}
+              onChange={props.change}
               placeholder={data.placeholder}
-              onClick={props.errorclicked}
+              onClick={props.clicked}
             ></input>
             <span>
               <i className={data.icon}></i>

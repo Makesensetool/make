@@ -10,6 +10,7 @@ const initialFormState = {
   newpassword:"",
   typeofchange:undefined,
   user:"",
+  Repeatpassword:"",
 };
 
 export const newpassword=(state=initialFormState,action)=>{ 

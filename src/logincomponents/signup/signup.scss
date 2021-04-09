@@ -37,6 +37,7 @@
 .colorwithleft {
   color: #385076;
   margin-left: -200px;
+  margin-top: -30px;
 }
 .center-align {
   text-align: center;
@@ -77,6 +78,7 @@ body {
   width: 100%;
   cursor: pointer;
   height: 40px;
+  margin-top: 10px;
 }
 
 .btn:hover {
@@ -200,4 +202,9 @@ select:-webkit-autofill:focus {
     font-weight: bold;
     // color: green;
   }
+}
+
+.link-btn{
+  margin-left: 170px;
+  margin-top: 15px;
 }

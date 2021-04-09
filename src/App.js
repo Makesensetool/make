@@ -23,6 +23,7 @@ const initialFormState = {
   newpassword:"",
   typeofchange:undefined,
   user:"",
+  Repeatpassword:"",
 };
 
 export default function Login() {

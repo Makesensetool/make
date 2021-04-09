@@ -31,7 +31,7 @@ const SignedUp = (props) => {
           <button className="signupbtn btn-2" onClick={props.signup}>
             Sign Up
           </button>
-          <Link to={"/"}>
+          <Link to={"/login"}>
             <Media className="link-btn justcolor">SignIn?</Media>
           </Link>
         </div>
