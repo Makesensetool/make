@@ -3,6 +3,7 @@ import "./confirmsignup.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { confirmSigned } from "./conformsignupdata";
 import GetConfirmedSignin from "./getConfirmData";
+import VerifiedUserTwoToneIcon from '@material-ui/icons/VerifiedUserTwoTone';
 
 const confirmSignedin = (props) => {
   return (
@@ -23,7 +24,7 @@ const confirmSignedin = (props) => {
                   Back to Login ?
                 </a>
               </div>
-              <div className="buttonmargin">
+              <div>
                 <button
                   className="conformsignup-btn btn-2"
                   onClick={props.confirmsignup}
@@ -36,6 +37,10 @@ const confirmSignedin = (props) => {
                 >
                   Resend
                 </button>
+                {props.accountVerified && (<div style={{display:"flex",textAlign:'center',marginLeft:"60px",marginTop:"20px",color:"#188B18"}}>
+                  <VerifiedUserTwoToneIcon/>
+	                <p>Account Verified Sucessfully</p>
+	              </div>)}
               </div>
             </div>
           </div>

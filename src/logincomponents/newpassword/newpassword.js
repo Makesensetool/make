@@ -1,11 +1,20 @@
 /* eslint-disable no-unused-vars */
 /* src/App.js */
-import React, { Fragment, useEffect, useState, com } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import "../signin/signin_&_confirmsignup.scss";
-import { confirmSigned, confirmsignupbutton } from "./newpassworddata";
 import GetNewPassword from "./getNewpassword";
-const confirmSignedin = (props) => {
-
+import VerifiedUserTwoToneIcon from '@material-ui/icons/VerifiedUserTwoTone';
+const ConfirmSignedin = (props) => {
+  const [loading,updateloading]=useState(false);
+  const newpassword = () => {
+    updateloading(()=>true)
+      return props.newpassword()
+  }
+  useEffect(()=>{
+    if(props.errormessage){
+       updateloading(()=> false)
+    }
+  },[props.errormessage])
   return (
     <Fragment>
       <div className="SignApp">
@@ -18,11 +27,13 @@ const confirmSignedin = (props) => {
               <div>
                 <button
                   className="Signinbutton btn-2"
-                  onClick={props.newpassword}
+                  onClick={newpassword}
                 >
-                  Sign Up
+                  Sign Up &nbsp;{ loading && (
+                                < i 
+                                className = "fas fa-sync fa-spin margingleft">
+                            </i>)} 
                 </button>
-              
               </div>
               <span className="justcolor">
                 <i className="fas fa-arrow-left" aria-hidden="true" />
@@ -30,6 +41,10 @@ const confirmSignedin = (props) => {
                 <a className="justcolor" href="/">
                 &nbsp; Back to Login
               </a>
+              {props.accountVerified && (<div style={{display:"flex",textAlign:'center',marginLeft:"60px",marginTop:"20px",color:"#188B18"}}>
+                  <VerifiedUserTwoToneIcon/>
+	                <p>Account Verified Sucessfully</p>
+	              </div>)}
             </div>
           </div>
         </div>
@@ -37,4 +52,4 @@ const confirmSignedin = (props) => {
     </Fragment>
   );
 };
-export default confirmSignedin;
+export default ConfirmSignedin;

@@ -14,6 +14,7 @@ import Amplify, { Auth, Hub } from "aws-amplify";
 import history from "./history";
 import { useSelector, useDispatch } from "react-redux";
 import Nav from "./loginNavigations";
+import { setTimeout } from "timers";
 Amplify.configure(config);
 
 const initialFormState = {
@@ -24,6 +25,7 @@ const initialFormState = {
   typeofchange:undefined,
   user:"",
   Repeatpassword:"",
+  accountverified:false,
 };
 
 export default function Login() {
@@ -66,11 +68,15 @@ export default function Login() {
       updateMessage("Please check the Password !");
     }
   }
-
+  const navToLogin=()=>{
+    return history.push("/AfterLogin")
+  }
   async function confirmSignUp(username, authCode) {
     try {
-      await Auth.confirmSignUp(username, authCode);
-      history.push("/");
+      console.log(formState.accountverified)
+      await Auth.confirmSignUp(username, authCode)
+        updateFormState({accountverified:"true"})
+          setTimeout(navToLogin,2000)
     } catch (err) {
       updateMessage(err.message)
     }
@@ -101,7 +107,8 @@ export default function Login() {
     try {
       console.log(username, authCode, newpassword)
       await Auth.forgotPasswordSubmit(username, authCode, newpassword);
-      history.push("/");
+      updateFormState({accountverified:"true"})
+      setTimeout(navToLogin,2000)
     } catch (err) {
       updateMessage(err.message)
     }
@@ -154,6 +161,7 @@ export default function Login() {
         confirmsignup={confirmsign}
         resendConfirmationCode={resendConfirm}
         newpassword={newpassworder}
+        accountVerified={formState.accountverified}
       />
     </Fragment>
   );

@@ -62,6 +62,7 @@ import login from "./login";
               resendConfirmationCode={props.resendConfirmationCode}
               errormessage={props.errormessage}
               errorclicked={props.errorclicked}
+              accountVerified={props.accountVerified}
             />
           </Route>
           <Route path="/newpassword" exact>
@@ -71,6 +72,7 @@ import login from "./login";
               resendConfirmationCode={props.resendConfirmationCode}
               errormessage={props.errormessage}
               errorclicked={props.errorclicked}
+              accountVerified={props.accountVerified}
             />
           </Route>
          <Route path="/AfterLogin" exact render={() => checkRoute(<AfterLogin />)}/>

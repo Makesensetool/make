@@ -3,7 +3,18 @@
 import React, { Fragment, useEffect, useState, com } from "react";
 import "./forgotpassword.scss";
 
-const confirmSignedin = (props) => {
+
+const Forgotpassword = (props) => {
+  const [loading,updateloading]=useState(false);
+  const resend = () => {
+    updateloading(()=>true)
+      return props.resend()
+  }
+  useEffect(()=>{
+    if(props.errormessage){
+       updateloading(()=> false)
+    }
+  },[props.errormessage])
   return (
     <Fragment>
       <div className="App">
@@ -41,9 +52,12 @@ const confirmSignedin = (props) => {
             <div>
               <button
                 className="forgotpassword-btn btn-2"
-                onClick={props.resend}
+                onClick={resend}
               >
-                <strong>confirm</strong>
+                <strong>confirm</strong>{ loading && (
+                                < i 
+                                className = "fas fa-sync fa-spin margingleft">
+                            </i>)} 
               </button>
             </div>
             <br />
@@ -61,4 +75,4 @@ const confirmSignedin = (props) => {
     </Fragment>
   );
 };
-export default confirmSignedin;
+export default Forgotpassword;
