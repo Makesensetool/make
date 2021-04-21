@@ -3,11 +3,13 @@ import React, { Fragment } from "react";
 import { confirmSigned } from "./conformsignupdata";
 
 const getconformedSignedin=(props)=>confirmSigned.map((data, key) => {
+  
     return (
       <form
         autoComplete="off"
         className="wrap-input100 validate-input m-b-23"
         key={key}
+        onSubmit={props.confirm}
       >
         <div>
           <div className="label-input100">{data.heading}</div>

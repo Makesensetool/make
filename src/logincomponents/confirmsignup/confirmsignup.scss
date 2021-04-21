@@ -167,6 +167,7 @@ margin-bottom:40px
   text-align: left;
   margin-left: 20px;
   margin-top: -10px;
+  display: flex;
 }
 
 .label-input100 {
@@ -229,8 +230,8 @@ margin-bottom:40px
 
 .conformsignup-btn {
   flex: 1 1 auto;
-  margin: 10px;
-  width: 130px;
+margin:30px 10px 10px 10px ;
+  width: 230px;
   height: 38px;
   text-align: center;
   text-transform: uppercase;
@@ -256,7 +257,9 @@ input:-webkit-autofill:active {
 .justcolor{
   color: #385076;
 }
-
+.marginleft{
+  margin-left: 170px;
+}
 .Signinbutton {
   flex: 1 1 auto;
   margin: 10px;

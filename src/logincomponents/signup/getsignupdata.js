@@ -3,7 +3,7 @@ import SignupData from "./signupData";
 
 const getSignupData =(props)=>SignupData.map((data, key) => {
     return (
-      <form autoComplete="off" className="wrap-input100 validate-input m-b-23" key={key}>
+      <form autoComplete="off" className="wrap-input100 validate-input m-b-23" key={key} onSubmit={props.signup}>
       <div >
         <div>
           <div className="label-input100">{data.heading}</div>

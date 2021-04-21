@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 
 export const EditorFeatureData = [
   {
-    displayText: "hi",
+    displayText: "Open source and free to use under GPLv3 license",
     imageSrc: "ico/open-source.png",
     imageAlt: "open-source",
-  },
+},
   {
     displayText: "No advanced installation required, just open up your browser",
     imageSrc: "ico/online.png",

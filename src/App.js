@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment, useEffect, useState } from "react";
+import  { Redirect } from 'react-router-dom'
 import config from "./aws-exports";
 import {
   newestpassword,
@@ -9,7 +10,9 @@ import {
   lookinSignUp,
   newUser,
   tryingsigincomplete,
+  logout
 } from "./store/login/actions/index";
+import Dashboard from "./dashboard/dashboard"
 import Amplify, { Auth, Hub } from "aws-amplify";
 import history from "./history";
 import { useSelector, useDispatch } from "react-redux";
@@ -47,7 +50,7 @@ export default function Login() {
       Auth.currentSession().then((data) => {
         signincompleted(data.accessToken.jwtToken);
         console.log("credentials are ok");
-        history.push("/AfterLogin");
+        history.push("/dashboard");
       });
     } catch (err) {
       console.log(err.message);
@@ -74,7 +77,7 @@ export default function Login() {
   async function confirmSignUp(username, authCode) {
     try {
       console.log(formState.accountverified)
-      await Auth.confirmSignUp(username, authCode)
+      await Auth.confirmSignUp(formState.username, authCode)
         updateFormState({accountverified:"true"})
           setTimeout(navToLogin,2000)
     } catch (err) {
@@ -114,6 +117,15 @@ export default function Login() {
     }
   }
 
+  async function logOut() {
+    try {
+        await Auth.signOut();
+       return <Redirect to='/login' />
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
+const logoutdispatch=()=>dispatch(logout(logOut))
   // sending request to the dispatch
   const signInner = () =>
     dispatch(signingin(formState.username, formState.password, signIn));
@@ -146,6 +158,7 @@ export default function Login() {
     dispatch(
       lookinSignUp(formState.username, formState.authCode, confirmSignUp)
     );
+  
   // sending request to the dispatch last value end....
   return (
     <Fragment>
@@ -162,6 +175,7 @@ export default function Login() {
         resendConfirmationCode={resendConfirm}
         newpassword={newpassworder}
         accountVerified={formState.accountverified}
+        logout={logoutdispatch}
       />
     </Fragment>
   );

@@ -59,3 +59,11 @@ export const tryingsigincomplete=(username,sigincomplete)=>{
     sigincomplete:sigincomplete
   }
 }
+
+export const logout=(logout)=>{
+  return {
+    type:"logout",
+    logout:logout
+  }
+
+}

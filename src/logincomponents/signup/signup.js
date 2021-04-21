@@ -7,7 +7,8 @@ import "./signup.scss";
 
 const SignedUp = (props) => {
   const [loading,updateloading]=useState(false);
-  const signup = () => {
+  const signup = (e) => {
+    e.preventDefault();
     updateloading(()=>true)
       return props.signup()
   }
@@ -23,7 +24,7 @@ const SignedUp = (props) => {
           <div className="center-align">
             <span className="signUp-title">Sign Up</span>
             <br />
-            <GetSignedUp change={props.changed} clicked={props.errorclicked} />
+            <GetSignedUp change={props.changed} clicked={props.errorclicked} signup={signup} />
             <p className="paracolor">{props.errormessage}</p>
             <Link
               className="colorwithleft"

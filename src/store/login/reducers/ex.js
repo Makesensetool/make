@@ -62,6 +62,12 @@ export const newpassword=(state=initialFormState,action)=>{
               ...state,
               user:action.sigincomplete(action.username)
             }
+      case "logout":
+              return{
+                    ...state,
+                    state:initialFormState,
+                    user:action.logout()
+                  }
 
       default:
         return state;

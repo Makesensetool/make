@@ -4,10 +4,10 @@ import "./signin.scss";
 const getsignedin = (props) =>
   SignInData.map((data, key) => {
     return (
-      <form
-        autoComplete="off"
+      <form key={key}
         className="wrap-input100 validate-input m-b-23"
-        key={key}
+        autoComplete="off"
+        onSubmit={props.signIn}
       >
         <div>
           <div className="label-input100">{data.heading}</div>

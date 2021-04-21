@@ -1,7 +1,6 @@
 export const confirmSigned=[
 
     {
-       
         heading:"Authentication Code",
         name:"authCode",
         type:"text",

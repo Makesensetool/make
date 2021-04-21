@@ -3,6 +3,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import config from "./aws-exports";
 import {Router,Route,Switch,Link, Redirect } from "react-router-dom";
 import Amplify, { Auth, Hub } from "aws-amplify";
+import Imagestab from "./imagestab/imagestab"
 import history from './history';
 import SignIn from "./logincomponents/signin/signin";
 import SignUp from "./logincomponents/signup/signup";
@@ -10,7 +11,7 @@ import ConfirmSignUp from "./logincomponents/confirmsignup/conformsignup";
 import Forgotpassword from "./logincomponents/forgotpassword/forgotpassword";
 import AfterLogin from "./login";
 import ErrorPage from "./error/errorPage"
-
+import Dashboard from "./dashboard/dashboard"
 import Newpassword from "./logincomponents/newpassword/newpassword";
 import login from "./login";
  const nav=(props)=> {
@@ -75,8 +76,10 @@ import login from "./login";
               accountVerified={props.accountVerified}
             />
           </Route>
-         <Route path="/AfterLogin" exact render={() => checkRoute(<AfterLogin />)}/>
-         <Route path="*" exact>
+          <Route path="/AfterLogin" exact render={() => checkRoute(<AfterLogin />)}/>
+          <Route path="/imagesloader" exact  render={() => checkRoute(<Imagestab/>)}/>
+          <Route path="/Dashboard" exact render={() => checkRoute(<Dashboard username={props.username} logout={props.logout}/>)}/>
+          <Route path="*" exact>
             <ErrorPage/>
           </Route>
         </Switch>

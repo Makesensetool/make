@@ -6,6 +6,12 @@ import GetConfirmedSignin from "./getConfirmData";
 import VerifiedUserTwoToneIcon from '@material-ui/icons/VerifiedUserTwoTone';
 
 const confirmSignedin = (props) => {
+
+  const confirmeddata=(e)=>{
+    e.preventDefault();
+    return props.confirmsignup()
+  }
+
   return (
     <Fragment>
       <div className="SignApp">
@@ -17,31 +23,27 @@ const confirmSignedin = (props) => {
               <GetConfirmedSignin
                 changed={props.changed}
                 clicked={props.errorclicked}
+                confirm={confirmeddata}
+                
               />
               <p className="paracolor">{props.errormessage}</p>
               <div className="backlogin">
                 <a className="justcolor" href="/">
                   Back to Login ?
                 </a>
+                <a className="justcolor marginleft" onClick={props.resendConfirmationCode}>Resend?</a>
+               
               </div>
-              <div>
                 <button
                   className="conformsignup-btn btn-2"
                   onClick={props.confirmsignup}
                 >
                   Sign Up
                 </button>
-                <button
-                  className="conformsignup-btn btn-2 bywidth2"
-                  onClick={props.resendConfirmationCode}
-                >
-                  Resend
-                </button>
                 {props.accountVerified && (<div style={{display:"flex",textAlign:'center',marginLeft:"60px",marginTop:"20px",color:"#188B18"}}>
                   <VerifiedUserTwoToneIcon/>
 	                <p>Account Verified Sucessfully</p>
 	              </div>)}
-              </div>
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@ import "./forgotpassword.scss";
 
 const Forgotpassword = (props) => {
   const [loading,updateloading]=useState(false);
-  const resend = () => {
+  const resend = (e) => {
+    e.preventDefault();
     updateloading(()=>true)
       return props.resend()
   }
@@ -18,6 +19,11 @@ const Forgotpassword = (props) => {
   return (
     <Fragment>
       <div className="App">
+      <form
+        autoComplete="off"
+        className="wrap-input100 validate-input m-b-23"
+        onSubmit={props.resend}
+      >
         <div className="wrap-login100 p-r-55 p-l-55 p-b-54 p-t-65">
           <div className="center-align">
             <div>
@@ -49,7 +55,6 @@ const Forgotpassword = (props) => {
               </div>
             </div>
             <p className="paracolor">{props.errormessage}</p>
-            <div>
               <button
                 className="forgotpassword-btn btn-2"
                 onClick={resend}
@@ -59,7 +64,6 @@ const Forgotpassword = (props) => {
                                 className = "fas fa-sync fa-spin margingleft">
                             </i>)} 
               </button>
-            </div>
             <br />
             <div>
               <span>
@@ -70,7 +74,7 @@ const Forgotpassword = (props) => {
               </a>
             </div>
           </div>
-        </div>
+        </div></form>
       </div>
     </Fragment>
   );

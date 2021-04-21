@@ -6,7 +6,8 @@ import GetNewPassword from "./getNewpassword";
 import VerifiedUserTwoToneIcon from '@material-ui/icons/VerifiedUserTwoTone';
 const ConfirmSignedin = (props) => {
   const [loading,updateloading]=useState(false);
-  const newpassword = () => {
+  const newpassword = (e) => {
+    e.preventDefault();
     updateloading(()=>true)
       return props.newpassword()
   }
@@ -18,6 +19,11 @@ const ConfirmSignedin = (props) => {
   return (
     <Fragment>
       <div className="SignApp">
+      <form
+        autoComplete="off"
+        className="wrap-input100 validate-input m-b-23"
+        onSubmit={newpassword}
+      >
         <div className="wrap-login100 p-r-55 p-l-55 p-b-54 p-t-65">
           <div className="center-align">
             <div>
@@ -47,7 +53,7 @@ const ConfirmSignedin = (props) => {
 	              </div>)}
             </div>
           </div>
-        </div>
+        </div></form>
       </div>
     </Fragment>
   );
